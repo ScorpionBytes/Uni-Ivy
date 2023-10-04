@@ -1,6 +1,8 @@
 name: manual-tests-new-dashboard
 on:
-  workflow_dispatch:
+  push:
+    branches: 
+      - 'ci_dashboard'
     inputs:
       test:
         description: 'Test:'
