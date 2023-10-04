@@ -48,7 +48,7 @@ jobs:
           mkdir .ivy
           touch .ivy/key.pem
           echo -n ${{ secrets.USER_API_KEY }} > .ivy/key.pem
-          python setup_tests.py "ivy_tests/test_ivy/test_frontends/test_torch/test_tensor.py::test_torch_instance_arctan_,tensorflow"
+          python setup_tests.py "ivy_tests/test_ivy/test_frontends/test_torch/test_tensor.py::test_torch_tensor_arctan,tensorflow"
           python run_tests.py ${{ secrets.REDIS_CONNECTION_URL }} ${{ secrets.REDIS_PASSWORD }} ${{ secrets.MONGODB_PASSWORD }} ${{ github.event.inputs.version}} 'false' ${{ github.run_id }} 'false' ${{ steps.jobs.outputs.html_url }}
         continue-on-error: true
 
